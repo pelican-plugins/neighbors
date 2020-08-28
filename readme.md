@@ -1,18 +1,31 @@
-Neighbor Articles Plugin for Pelican
-====================================
+# Neighbor Articles: A Plugin for Pelican
 
-This plugin adds ``next_article`` (newer) and ``prev_article`` (older)
-variables to the article's context.
+[![Build Status](https://img.shields.io/github/workflow/status/pelican-plugins/neighbors/build)](https://github.com/pelican-plugins/neighbors/actions) [![PyPI Version](https://img.shields.io/pypi/v/pelican-neighbors)](https://pypi.org/project/pelican-neighbors/)
 
-Also adds ``next_article_in_category`` and ``prev_article_in_category``.
+Neighbors is a Pelican plugin that adds Next/Previous links to articles.
 
 
-Usage
------
+## Installation
 
-.. code-block:: html+jinja
+This plugin can be installed via:
 
-    <ul>
+    python -m pip install pelican-neighbors
+
+
+## Basic usage
+
+This plugin adds a couple of new variables to the article's context:
+
+    * `next_article` (newer)
+    * `prev_article` (older)
+    * `next_article_in_category`
+    * `prev_article_in_category`
+
+Here is an example on how to add article navigation in your Jinja `article.html`
+template:
+
+```html+jinja
+<ul>
     {% if article.prev_article %}
         <li>
             <a href="{{ SITEURL }}/{{ article.prev_article.url}}">
@@ -27,8 +40,8 @@ Usage
             </a>
         </li>
     {% endif %}
-   </ul>
-   <ul>
+</ul>
+<ul>
     {% if article.prev_article_in_category %}
         <li>
             <a href="{{ SITEURL }}/{{ article.prev_article_in_category.url}}">
@@ -43,26 +56,26 @@ Usage
             </a>
         </li>
     {% endif %}
-    </ul>
+</ul>
+```
 
-Usage with the Subcategory plugin
----------------------------------
+
+## Usage with the Subcategory plugin
 
 If you want to get the neigbors within a subcategory it's a little different.
 Since an article can belong to more than one subcategory, subcategories are
 stored in a list. If you have an article with subcategories like
+`Category/Foo/Bar`, it will belong to both subcategory `Foo`, and `Foo/Bar`.
 
-``Category/Foo/Bar``
+Subcategory neighbors are added to an article as `next_article_in_subcategory#`
+and `prev_article_in_subcategory#` where `#` is the level of subcategory. So
+using the example from above, `subcategory1` will be `Foo`, and `subcategory2`
+will be `Foo/Bar`.
 
-it will belong to both subcategory Foo, and Foo/Bar. Subcategory neighbors are
-added to an article as ``next_article_in_subcategory#`` and
-``prev_article_in_subcategory#`` where ``#`` is the level of subcategory. So using
-the example from above, subcategory1 will be Foo, and subcategory2 Foo/Bar.
 Therefor the usage with subcategories is:
 
-.. code-block:: html+jinja
-
-    <ul>
+```html+jinja
+<ul>
     {% if article.prev_article_in_subcategory1 %}
         <li>
             <a href="{{ SITEURL }}/{{ article.prev_article_in_subcategory1.url}}">
@@ -77,8 +90,8 @@ Therefor the usage with subcategories is:
             </a>
         </li>
     {% endif %}
-   </ul>
-   <ul>
+</ul>
+<ul>
     {% if article.prev_article_in_subcategory2 %}
         <li>
             <a href="{{ SITEURL }}/{{ article.prev_article_in_subcategory2.url}}">
@@ -93,5 +106,15 @@ Therefor the usage with subcategories is:
             </a>
         </li>
     {% endif %}
-    </ul>
+</ul>
+```
 
+
+## Contributing
+
+Contributions are welcome and much appreciated. Every little bit helps. You can contribute by improving the documentation, adding missing features, and fixing bugs. You can also help out by reviewing and commenting on [existing issues][].
+
+To start contributing to this plugin, review the [Contributing to Pelican][] documentation, beginning with the **Contributing Code** section.
+
+[existing issues]: https://github.com/pelican-plugins/neighbors/issues
+[Contributing to Pelican]: https://docs.getpelican.com/en/latest/contribute.html
