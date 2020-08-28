@@ -1,1 +1,1 @@
-from .neighbors import *
+from .neighbors import *  # NOQA
