@@ -16,10 +16,10 @@ This plugin can be installed via:
 
 This plugin adds a couple of new variables to the article's context:
 
-    * `next_article` (newer)
-    * `prev_article` (older)
-    * `next_article_in_category`
-    * `prev_article_in_category`
+* `next_article` (newer)
+* `prev_article` (older)
+* `next_article_in_category`
+* `prev_article_in_category`
 
 Here is an example on how to add article navigation in your Jinja `article.html`
 template:
