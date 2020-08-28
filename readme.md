@@ -60,9 +60,12 @@ template:
 ```
 
 
-## Usage with the Subcategory plugin
+## Subcategory plugin support
 
-If you want to get the neigbors within a subcategory it's a little different.
+This plugin is compatible with the [`subcategory`
+plugin](https://github.com/getpelican/pelican-plugins/tree/master/subcategory).
+here is how to use it.
+
 Since an article can belong to more than one subcategory, subcategories are
 stored in a list. If you have an article with subcategories like
 `Category/Foo/Bar`, it will belong to both subcategory `Foo`, and `Foo/Bar`.
