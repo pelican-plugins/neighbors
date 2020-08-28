@@ -62,9 +62,9 @@ template:
 
 ## Subcategory plugin support
 
-This plugin is compatible with the [`subcategory`
+Following below are instructions on how to use `Neighbors` in conjunction with
+the [`Subcategory`
 plugin](https://github.com/getpelican/pelican-plugins/tree/master/subcategory).
-here is how to use it.
 
 Since an article can belong to more than one subcategory, subcategories are
 stored in a list. If you have an article with subcategories like
