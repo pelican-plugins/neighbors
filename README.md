@@ -61,8 +61,10 @@ template:
 </ul>
 ```
 
-## more_categories plugin support
-You can use `Neighbors` with the [`more_categories`](https://github.com/pelican-plugins/more-categories) plugin.
+## More Categories plugin support
+
+You can use the `Neighbors` plugin with the [More
+Categories](https://github.com/pelican-plugins/more-categories) plugin.
 
 Since an article can belong to more than one subcategory, subcategories are
 stored in a list. If you have an article with subcategories like
@@ -78,7 +80,7 @@ Using the example above:
 
 ## Subcategory plugin support
 
-You can use `Neighbors` in conjunction with the [`Subcategory`
+You can use the Neighbors plugin in conjunction with the [Subcategory
 plugin](https://github.com/getpelican/pelican-plugins/tree/master/subcategory).
 
 Since an article can belong to more than one subcategory, subcategories are
@@ -90,9 +92,9 @@ and `prev_article_in_subcategory#` where `#` is the level of subcategory. So
 using the example from above, `subcategory1` will be `Foo`, and `subcategory2`
 will be `Foo/Bar`.
 
-## template examples
+## Template Examples
 
-The usage with subcategories from either `subcategory` or `more_categories` is:
+The usage with subcategories from either the Subcategory plugin or the More Categories plugin is:
 
 ```html+jinja
 <ul>
@@ -128,6 +130,10 @@ The usage with subcategories from either `subcategory` or `more_categories` is:
     {% endif %}
 </ul>
 ```
+
+## Limitations
+
+If an article has multiple categories, only the first category is considered.
 
 
 ## Contributing
