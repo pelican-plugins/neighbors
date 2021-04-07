@@ -63,7 +63,7 @@ template:
 
 ## More Categories plugin support
 
-You can use the `Neighbors` plugin with the [More
+You can use the Neighbors plugin with the [More
 Categories](https://github.com/pelican-plugins/more-categories) plugin.
 
 Since an article can belong to more than one subcategory, subcategories are
