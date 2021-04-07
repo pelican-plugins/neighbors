@@ -12,7 +12,7 @@ This plugin can be installed via:
     python -m pip install pelican-neighbors
 
 
-## Basic usage
+## Usage
 
 This plugin adds a couple of new variables to the article's context:
 
@@ -20,6 +20,8 @@ This plugin adds a couple of new variables to the article's context:
 * `prev_article` (older)
 * `next_article_in_category`
 * `prev_article_in_category`
+* `next_article_in_subcategory#`
+* `prev_article_in_subcategory#`
 
 Here is an example on how to add article navigation in your Jinja `article.html`
 template:
@@ -59,11 +61,24 @@ template:
 </ul>
 ```
 
+## more_categories plugin support
+You can use `Neighbors` with the [`more_categories`](https://github.com/pelican-plugins/more-categories) plugin.
+
+Since an article can belong to more than one subcategory, subcategories are
+stored in a list. If you have an article with subcategories like
+`foo/bar/baz`, it will belong to both subcategory `bar`, and `bar/baz`.
+
+Subcategory neighbors are added to an article as `next_article_in_subcategory#`
+and `prev_article_in_subcategory#` where `#` is the level of subcategory.
+
+Using the example above:
+- `sebcategory0` is `foo`
+- `subcategory1` will be `foo/bar`
+- `subcategory2` will be `foo/bar/baz`
 
 ## Subcategory plugin support
 
-Following below are instructions on how to use `Neighbors` in conjunction with
-the [`Subcategory`
+You can use `Neighbors` in conjunction with the [`Subcategory`
 plugin](https://github.com/getpelican/pelican-plugins/tree/master/subcategory).
 
 Since an article can belong to more than one subcategory, subcategories are
@@ -75,7 +90,9 @@ and `prev_article_in_subcategory#` where `#` is the level of subcategory. So
 using the example from above, `subcategory1` will be `Foo`, and `subcategory2`
 will be `Foo/Bar`.
 
-Therefor the usage with subcategories is:
+## template examples
+
+The usage with subcategories from either `subcategory` or `more_categories` is:
 
 ```html+jinja
 <ul>
