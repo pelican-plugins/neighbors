@@ -74,7 +74,7 @@ Subcategory neighbors are added to an article as `next_article_in_subcategory#`
 and `prev_article_in_subcategory#` where `#` is the level of subcategory.
 
 Using the example above:
-- `sebcategory0` is `foo`
+- `subcategory0` is `foo`
 - `subcategory1` will be `foo/bar`
 - `subcategory2` will be `foo/bar/baz`
 
