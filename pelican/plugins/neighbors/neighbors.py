@@ -48,7 +48,7 @@ def neighbors(generator):
         articles.sort(key=lambda x: x.date, reverse=True)
         set_neighbors(articles, "next_article_in_category", "prev_article_in_category")
 
-    # support for more_categories plugin
+    # support for the More Categories plugin
     for category, articles in generator.categories:
         articles.sort(key=lambda x: x.date, reverse=True)
         index = category.name.count("/")
@@ -56,7 +56,7 @@ def neighbors(generator):
         prev_name = f"prev_article_in_subcategory{index}"
         set_neighbors(articles, next_name, prev_name)
 
-    # support for subcategory plugin
+    # support for the Subcategory Plugin
     if hasattr(generator, "subcategories"):
         for subcategory, articles in generator.subcategories:
             articles.sort(key=lambda x: x.date, reverse=True)
