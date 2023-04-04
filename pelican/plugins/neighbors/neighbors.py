@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Neighbor Articles Plugin for Pelican
 ====================================
@@ -61,8 +60,8 @@ def neighbors(generator):
         for subcategory, articles in generator.subcategories:
             articles.sort(key=lambda x: x.date, reverse=True)
             index = subcategory.name.count("/")
-            next_name = "next_article_in_subcategory{}".format(index)
-            prev_name = "prev_article_in_subcategory{}".format(index)
+            next_name = f"next_article_in_subcategory{index}"
+            prev_name = f"prev_article_in_subcategory{index}"
             set_neighbors(articles, next_name, prev_name)
 
 
