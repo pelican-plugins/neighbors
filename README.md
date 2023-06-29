@@ -1,6 +1,6 @@
 # Neighbor Articles: A Plugin for Pelican
 
-[![Build Status](https://img.shields.io/github/workflow/status/pelican-plugins/neighbors/build)](https://github.com/pelican-plugins/neighbors/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/pelican-plugins/neighbors/main.yml?branch=main)](https://github.com/pelican-plugins/neighbors/actions)
 [![PyPI Version](https://img.shields.io/pypi/v/pelican-neighbors)](https://pypi.org/project/pelican-neighbors/)
 
 Neighbors is a Pelican plugin that adds Next/Previous links to articles.
