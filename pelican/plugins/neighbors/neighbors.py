@@ -5,6 +5,7 @@ Neighbor Articles Plugin for Pelican
 This plugin adds ``next_article`` (newer) and ``prev_article`` (older)
 variables to the article's context
 """
+
 from pelican import signals
 
 
